@@ -23,17 +23,9 @@
    <extension
          point="org.eclipse.ui.views">
       <view
-            name="View"
+            name="Узлы"
             class="octavian.View"
             id="octavian.view">
-      </view>
-   </extension>
-   <extension
-         point="org.eclipse.ui.views">
-      <view
-            name="Узлы"
-            class="octavian.Nodes"
-            id="octavian.nodes">
       </view>
    </extension>
    <extension
