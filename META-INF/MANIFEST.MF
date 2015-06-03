@@ -5,6 +5,6 @@ Bundle-SymbolicName: org.eclipse.octavian;singleton:=true
 Bundle-Version: 0.0.0
 Bundle-Activator: octavian.Activator
 Require-Bundle: org.eclipse.ui, org.eclipse.core.runtime
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Dmitry Ponyatov
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
