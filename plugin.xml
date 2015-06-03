@@ -14,9 +14,10 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            name="Perspective"
+            name="Octavian"
             class="octavian.Perspective"
-            id="octavian.perspective">
+            id="octavian.perspective"
+            icon="icons/octave.png">
       </perspective>
    </extension>
    <extension
@@ -28,12 +29,20 @@
       </view>
    </extension>
    <extension
-         point="org.eclipse.ui.editors">
+         point="org.eclipse.ui.views">
       <view
+            name="Узлы"
+            class="octavian.Nodes"
+            id="octavian.nodes">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
             name="Editor"
             class="octavian.Editor"
             id="octavian.editor">
-      </view>
+      </editor>
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
@@ -42,8 +51,6 @@
          <view
                standalone="true"
                minimized="false"
-               relative="org.eclipse.ui.editorss"
-               relationship="left"
                id="octavian.view">
          </view>
       </perspectiveExtension>
