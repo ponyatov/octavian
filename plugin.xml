@@ -17,30 +17,32 @@
    </extension>
    
    <extension point="org.eclipse.ui.views">
+   		<category id="octave.category" name="Octave" />
 		<view
-            name="Узлы"
-            class="octavian.nodes"
-            id="octavian.nodes"
-            icon="icon/nodes.png"
-            />
+        category="octave.category"
+        class="octavian.nodes"
+        icon="icon/nodes.png"
+        id="octavian.nodes"
+        name="Узлы"
+        />
 		<view
-			name="Файлы"
-			class="octavian.files"
-			id="octavian.files"
-			/>
+        category="octave.category"
+        class="org.eclipse.ui.navigator.CommonNavigator"
+        id="octavian.files"
+        name="Файлы"
+        />
    </extension>
    
-   <extension point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="*">
-         <view
-               standalone="true"
-               minimized="false"
-               relative="org.eclipse.ui.editorss"
-               relationship="left"
-               id="octavian.nodes"/>
-      </perspectiveExtension>
-   </extension>
+	<extension point="org.eclipse.ui.perspectiveExtensions">
+		<perspectiveExtension targetID="*">
+			<view
+				id="octavian.nodes"
+            	relationship="left"
+            	standalone="true"
+			/>
+		<hiddenMenuItem id="org.eclipse.ui.run"/>
+		</perspectiveExtension>
+	</extension>
    
    <extension point="org.eclipse.ui.menus">
       <menuContribution

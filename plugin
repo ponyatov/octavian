@@ -1,0 +1,11 @@
+            <hiddenMenuItem id="org.eclipse.ui.run"/>
+
+               
+         <view
+               
+               minimized="false"
+               relative="org.eclipse.ui.editorss"
+               />
+      </perspectiveExtension>
+   
+            
