@@ -1,0 +1,2 @@
+Bundle-Activator: octavian.Activator
+Bundle-ActivationPolicy: lazy

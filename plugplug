@@ -1,0 +1,41 @@
+<extension
+	id="application"
+	point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.eclipse.ponyatov.octavian.application">
+         </run>
+      </application>
+</extension>
+
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="octavian.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="octavian.Perspective"
+            id="octavian.perspective"
+            name="Octavian"
+            icon="icons/octave.png"
+            >
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+         <view
+               class="octavian.Nodes"
+               id="octavian.nodes"
+               icon="icons/sample.gif"
+               name="Узлы"
+               >
+         </view>
+   </extension>
+
