@@ -1,4 +1,4 @@
-package org.eclipse.ponyatov.octavian;
+package octavian;
 
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;

@@ -4,8 +4,8 @@
 
 <extension point="org.eclipse.ui.perspectives">
 	<perspective
-	id="org.eclipse.ponyatov.octavian.perspective"
-	class="org.eclipse.ponyatov.octavian.perspective"
+	id="octavian.perspective"
+	class="octavian.perspective"
 	name="Octavian"
 	icon="icon/octave.png"
 	>

@@ -1,8 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Octavian
-Bundle-SymbolicName: org.eclipse.ponyatov.octavian;singleton:=true
+Bundle-SymbolicName: octavian;singleton:=true
 Bundle-Version: 0.0.1
 Require-Bundle: org.eclipse.ui, org.eclipse.core.runtime
-Bundle-Vendor: Dmitry Ponyatov
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
