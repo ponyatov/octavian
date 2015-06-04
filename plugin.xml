@@ -17,12 +17,17 @@
    </extension>
    
    <extension point="org.eclipse.ui.views">
-      <view
+		<view
             name="Узлы"
-            class="octavian.View"
-            id="octavian.view"
+            class="octavian.nodes"
+            id="octavian.nodes"
             icon="icon/nodes.png"
             />
+		<view
+			name="Файлы"
+			class="octavian.files"
+			id="octavian.files"
+			/>
    </extension>
    
    <extension point="org.eclipse.ui.perspectiveExtensions">
@@ -33,7 +38,7 @@
                minimized="false"
                relative="org.eclipse.ui.editorss"
                relationship="left"
-               id="octavian.view"/>
+               id="octavian.nodes"/>
       </perspectiveExtension>
    </extension>
    

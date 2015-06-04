@@ -4,6 +4,6 @@ Bundle-Name: Octavian
 Bundle-SymbolicName: octavian;singleton:=true
 Bundle-Version: 0.0.1
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.ui
+ org.eclipse.ui, org.eclipse.ui.navigator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-Vendor: Dmitry Ponyatov
