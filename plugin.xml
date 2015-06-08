@@ -78,13 +78,14 @@
    </extension>
    
    <extension point="org.eclipse.ui.views">
-		<category id="octavian.category" name="Octavian"/>
+		<category id="octavian.category.view" name="Octavian"/>
 		<view
             name="Файлы"
             class="org.eclipse.ui.navigator.CommonNavigator"
             id="octavian.files"
             icon="icon/project.png"
             allowMultiple="false"
+            category="octavian.category.view"
         />
 		<view
             name="Узлы"
@@ -92,6 +93,7 @@
             id="octavian.nodes"
             icon="icon/nodes.png"
             allowMultiple="false"
+            category="octavian.category.view"
 		/>
    </extension>
    
@@ -158,6 +160,20 @@
    				visible="true"
    			/>
       </perspectiveExtension>
+   </extension>
+   
+   <extension point="org.eclipse.ui.newWizards">
+   		<category 
+   			id="octavian.category.newwiz" 
+   			name="Octavian"
+   		/>
+   		<wizard
+   			id="octavian.wiz.new"
+   			class="octavian.New"
+   			name="Octavian project"
+   			category="octavian.category.newwiz"
+   			icon="icon/octave.png"
+   		/>
    </extension>
    
 </plugin>
