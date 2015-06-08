@@ -101,7 +101,6 @@
    			<includes>
    				<contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
    				<contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
-   				<contentExtension pattern="octavian.filters.*"/>
    			</includes>
    		</viewerContentBinding>
    		<viewerActionBinding viewerId="octavian.files">
