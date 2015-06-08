@@ -171,7 +171,14 @@
    			name="Octavian project"
    			category="octavian.category.newwiz"
    			icon="icon/octave_16x16.png"
-   		/>
+   			hasPages="true"
+   			descriptionImage="icon/korolev.jpg"
+   		>
+   			<description>
+Проект для системы облачных вычислений Octavian August
++ поддержка кластера СГАУ "Сергей Королев" [ http://hpc.ssau.ru/ ]
+   			</description>
+   		</wizard>
    </extension>
    
 	<extension point="org.eclipse.core.resources.natures"
