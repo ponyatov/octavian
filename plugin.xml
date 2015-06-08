@@ -163,17 +163,15 @@
    </extension>
    
    <extension point="org.eclipse.ui.newWizards">
-   		<category 
-   			id="octavian.category.newwiz" 
-   			name="Octavian"
-   		/>
+   		<category id="octavian.category.newwiz" name="Octavian"/>
+   		<primaryWizard id="octavian.wizard.new"/>
    		<wizard
-   			id="octavian.wiz.new"
+   			id="octavian.wizard.new"
    			class="octavian.New"
    			name="Octavian project"
    			category="octavian.category.newwiz"
-   			icon="icon/octave.png"
+   			icon="icon/octave_16x16.png"
    		/>
-   </extension>
+   </extension>   
    
 </plugin>
