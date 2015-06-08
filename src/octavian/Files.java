@@ -4,6 +4,8 @@ public class Files extends org.eclipse.ui.navigator.CommonNavigator {
 	public static final String ID = "octavian.files";
 }
 
+
+
 //import java.io.File;
 //
 //import org.eclipse.jface.viewers.BaseLabelProvider;

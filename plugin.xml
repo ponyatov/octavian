@@ -96,10 +96,11 @@
    </extension>
    
    <extension point="org.eclipse.ui.navigator.viewer">
-   		<viewer viewerId="octavian.Files"/>
-   		<viewerContentBinding viewerId="octavian.Files">
+   		<viewer viewerId="octavian.files"/>
+   		<viewerContentBinding viewerId="octavian.files">
    			<includes>
    				<contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
+				<contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
    			</includes>
    		</viewerContentBinding>
    </extension>
