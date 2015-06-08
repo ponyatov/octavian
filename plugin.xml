@@ -13,42 +13,121 @@
             name="Octavian"
             class="octavian.Perspective"
             id="octavian.perspective"
+            fixed="true"
             />
+   </extension>
+   
+	<extension point="org.eclipse.ui.bindings">
+		<key
+			sequence="M3+Q"
+			commandId="org.eclipse.ui.file.exit"
+			schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+			contextId="org.eclipse.ui.contexts.window" />
+	</extension>   
+   
+   <extension point="org.eclipse.ui.menus">
+   		<menuContribution
+   				locationURI="menu:org.eclipse.ui.main.menu">
+   				<menu
+   					id="octavian.menu.file"
+   					label="&amp;Fайл"
+   					icon="icon/file.png"
+   				>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="&amp;Nовый"
+   						icon="icon/new.png"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="&amp;Oткрыть"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="&amp;Sохранить"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="Сохранить к&amp;aк"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="Закрыть"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="Выход"
+   						icon="icon/quit.png"
+   						/>
+   				</menu>
+   				<menu
+   					id="eddy.menu.edit"
+   					label="Р&amp;eдактор"
+   					icon="icon/edit.png"
+   				>
+   					<command
+   						commandId="org.eclipse.ui.edit.undo"
+   						label="Откот"
+   					/>
+   					<command
+   						commandId="org.eclipse.ui.edit.redo"
+   						label="Наезд"
+   					/>
+   				</menu>
+        </menuContribution>
    </extension>
    
    <extension point="org.eclipse.ui.views">
-      <view
+		<category 
+           id="octavian.category"
+           name="Octavian">
+        </category>   
+		<view
+            name="Файлы"
+            class="octavian.Files"
+            id="octavian.files"
+            icon="icon/file.png"
+        />
+		<view
             name="Узлы"
-            class="octavian.nodes"
+            class="octavian.Nodes"
             id="octavian.nodes"
             icon="icon/nodes.png"
-            />
+		/>
    </extension>
    
    <extension point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-      		 targetID="*">
+   		<perspectiveExtension targetID="octavian.perspective">
+   			<hiddenMenuItem id="org.eclipse.ui.run"/>
+   			<hiddenMenuItem id="org.eclipse.source.menu"/>
+   			<hiddenMenuItem id="org.eclipse.refactor.menu"/>
+   			<hiddenMenuItem id="org.eclipse.search.menu"/>
+   			<view
+   				id="org.eclipse.jdt.ui.PackageExplorer"
+   				minimized="false"
+   				moveable="false"
+   				ratio="0.3"
+   				relationship="left"
+   				relative="org.eclipse.ui.editorss"
+   				visible="true"
+   			/>
          <view
                standalone="true"
                minimized="false"
-               relative="org.eclipse.ui.editorss"
-               relationship="left"
+               moveable="false"
+ 				ratio="0.5"
+               relative="org.eclipse.jdt.ui.PackageExplorer"
+               relationship="bottom"
+               id="octavian.files"/>
+         <view
+               standalone="true"
+               minimized="false"
+               moveable="false"
+   				ratio="0.5"
+               relative="octavian.files"
+               relationship="bottom"
                id="octavian.nodes"/>
       </perspectiveExtension>
    </extension>
    
-   <extension point="org.eclipse.ui.menus">
-      <menuContribution
-            locationURI="menu:org.eclipse.ui.main.menu">
-         <menu 
-         	label="Файл" 
-         	icon="icon/file.png">
-            <command
-                  commandId="org.eclipse.ui.file.exit"
-                  label="Выход"
-                  icon="icon/quit.png"/>
-         </menu>
-      </menuContribution>
-   </extension>
-
 </plugin>
