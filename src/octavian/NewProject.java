@@ -11,7 +11,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 
-public class NewProject extends BasicNewProjectResourceWizard implements org.eclipse.ui.IWorkbenchWizard {
+public class NewProject extends BasicNewProjectResourceWizard implements org.eclipse.ui.INewWizard {
 	private static final String WIZARD_NAME = "Octavian.NewProject";
 	
 	private WizardNewProjectCreationPage page1;
