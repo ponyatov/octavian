@@ -101,6 +101,7 @@
    			<includes>
    				<contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
    				<contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+   				<contentExtension pattern="octavian.filters.*"/>
    			</includes>
    		</viewerContentBinding>
    		<viewerActionBinding viewerId="octavian.files">
@@ -108,6 +109,21 @@
    				<actionExtension pattern="org.eclipse.ui.navigator.resources.*"/>
    			</includes>
    		</viewerActionBinding>
+   </extension>
+   
+   <extension point="org.eclipse.ui.navigator.navigatorContent">
+   		<commonFilter id="octavian.filters.nonJava" name="Octavian filter">
+   			<filterExpression>
+   				<not>
+   					<adapt type="org.eclipse.core.resources.IProject">
+   						<test
+   							property="org.eclipse.core.resources.projectNature"
+   							value="org.eclipse.jdt.core.javanature"
+   						/>
+   					</adapt>
+   				</not>
+   			</filterExpression>
+   		</commonFilter>
    </extension>
    
    <extension point="org.eclipse.ui.perspectiveExtensions">
