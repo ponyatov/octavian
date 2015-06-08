@@ -78,21 +78,20 @@
    </extension>
    
    <extension point="org.eclipse.ui.views">
-		<category 
-           id="octavian.category"
-           name="Octavian">
-        </category>   
+		<category id="octavian.category" name="Octavian"/>
 		<view
             name="Файлы"
             class="octavian.Files"
             id="octavian.files"
             icon="icon/file.png"
+            allowMultiple="false"
         />
 		<view
             name="Узлы"
             class="octavian.Nodes"
             id="octavian.nodes"
             icon="icon/nodes.png"
+            allowMultiple="false"
 		/>
    </extension>
    
