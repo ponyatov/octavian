@@ -172,6 +172,13 @@
    			category="octavian.category.newwiz"
    			icon="icon/octave_16x16.png"
    		/>
-   </extension>   
+   </extension>
+   
+	<extension point="org.eclipse.core.resources.natures"
+         id="octavian.nature">
+      <runtime>
+         <run class="octavian.Nature"/>
+      </runtime>
+   </extension>      
    
 </plugin>
