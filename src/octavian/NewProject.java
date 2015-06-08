@@ -11,12 +11,12 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 
-public class New extends BasicNewProjectResourceWizard implements org.eclipse.ui.IWorkbenchWizard {
-	private static final String WIZARD_NAME = "Octavian.New";
+public class NewProject extends BasicNewProjectResourceWizard implements org.eclipse.ui.IWorkbenchWizard {
+	private static final String WIZARD_NAME = "Octavian.NewProject";
 	
 	private WizardNewProjectCreationPage page1;
 	
-	public New() { setWindowTitle(WIZARD_NAME); }
+	public NewProject() { setWindowTitle(WIZARD_NAME); }
 
 	@Override
 	public void addPages() {

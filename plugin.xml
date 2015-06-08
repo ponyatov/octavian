@@ -164,10 +164,10 @@
    
    <extension point="org.eclipse.ui.newWizards">
    		<category id="octavian.category.newwiz" name="Octavian"/>
-   		<primaryWizard id="octavian.wizard.new"/>
+   		<primaryWizard id="octavian.wizard.newproject"/>
    		<wizard
-   			id="octavian.wizard.new"
-   			class="octavian.New"
+   			id="octavian.wizard.newproject"
+   			class="octavian.NewProject"
    			name="Octavian project"
    			category="octavian.category.newwiz"
    			icon="icon/octave_16x16.png"
@@ -179,6 +179,60 @@
 + поддержка кластера СГАУ "Сергей Королев" [ http://hpc.ssau.ru/ ]
    			</description>
    		</wizard>
+   		<wizard
+   			id="octavian.wizard.newm"
+   			class="octavian.NewM"
+   			name="Файл Octave/MatLab (.m)"
+   			category="octavian.category.newwiz"
+   			icon="icon/matlab.png"
+   			hasPages="true"
+   		>
+   			<description>Файл Octave/MatLab (.m)</description>
+   		</wizard>
+   		<wizard
+   			id="octavian.wizard.newoct"
+   			class="octavian.NewOct"
+   			name="Модуль на C++ (.oct)"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/cpp.png"
+   		>
+   			<description>Низкоуровневый модуль расшиения на C++ (.oct)</description>
+   		</wizard>
+   		<wizard
+   			id="octavian.wizard.newlinux"
+   			class="octavian.NewLinux"
+   			name="Программа для Linux (C/C++)"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/linux.png"
+   		>
+   			<description>Программа для UNIX/Linux (C/C++)</description>
+   		</wizard>
+   		<wizard
+   			id="octavian.wizard.newmatrix"
+   			class="octavian.NewMatrix"
+   			name="Матрица (.mat)"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/linux.png"
+   		/>
+   		<wizard
+   			id="octavian.wizard.newfunction"
+   			class="octavian.NewFunction"
+   			name="Функция"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/function.png"
+   		/>
+   		<wizard
+   			id="octavian.wizard.newplot"
+   			class="octavian.NewPlot"
+   			name="График (.plot)"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/plot.png"
+   		/>
    </extension>
    
 	<extension point="org.eclipse.core.resources.natures"
