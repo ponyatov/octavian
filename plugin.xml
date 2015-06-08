@@ -81,9 +81,9 @@
 		<category id="octavian.category" name="Octavian"/>
 		<view
             name="Файлы"
-            class="octavian.Files"
+            class="org.eclipse.ui.navigator.CommonNavigator"
             id="octavian.files"
-            icon="icon/file.png"
+            icon="icon/project.png"
             allowMultiple="false"
         />
 		<view
@@ -100,7 +100,7 @@
    		<viewerContentBinding viewerId="octavian.files">
    			<includes>
    				<contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
-				<contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+   				<contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
    			</includes>
    		</viewerContentBinding>
    		<viewerActionBinding viewerId="octavian.files">
