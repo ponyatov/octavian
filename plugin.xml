@@ -168,7 +168,7 @@
    		<wizard
    			id="octavian.wizard.newproject"
    			class="octavian.NewProject"
-   			name="Octavian project"
+   			name="Проект Octavian"
    			category="octavian.category.newwiz"
    			icon="icon/octave_16x16.png"
    			hasPages="true"
@@ -240,5 +240,20 @@
          <run class="octavian.Nature"/>
       </runtime>
    </extension>      
-   
+
+	<extension point="org.eclipse.ui.activities">
+	<activity id="octavian.activity.disabled" name="octavian.activity.disabled">
+		<enabledWhen>
+			<with variable="selection">
+				<count value="-1"/>
+        	</with>
+		</enabledWhen>
+	</activity>
+	<activityPatternBinding
+        activityId="octavian.activity.disabled"
+        pattern="org\.eclipse\.refactor\..*">
+  	</activityPatternBinding>
+	</extension>
+        
 </plugin>
+
