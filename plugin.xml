@@ -172,7 +172,6 @@
    			category="octavian.category.newwiz"
    			icon="icon/octave_16x16.png"
    			hasPages="true"
-   			descriptionImage="icon/korolev.jpg"
    		>
    			<description>
 Проект для системы облачных вычислений Octavian August
