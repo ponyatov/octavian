@@ -13,42 +13,247 @@
             name="Octavian"
             class="octavian.Perspective"
             id="octavian.perspective"
+            fixed="true"
             />
+   </extension>
+   
+	<extension point="org.eclipse.ui.bindings">
+		<key
+			sequence="M3+Q"
+			commandId="org.eclipse.ui.file.exit"
+			schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+			contextId="org.eclipse.ui.contexts.window" />
+	</extension>   
+   
+   <extension point="org.eclipse.ui.menus">
+   		<menuContribution
+   				locationURI="menu:org.eclipse.ui.main.menu">
+   				<menu
+   					id="octavian.menu.file"
+   					label="&amp;Fайл"
+   					icon="icon/file.png"
+   				>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="&amp;Nовый"
+   						icon="icon/new.png"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="&amp;Oткрыть"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="&amp;Sохранить"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="Сохранить к&amp;aк"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="Закрыть"
+   						/>
+   					<command
+   						commandId="org.eclipse.ui.file.exit"
+   						label="Выход"
+   						icon="icon/quit.png"
+   						/>
+   				</menu>
+   				<menu
+   					id="eddy.menu.edit"
+   					label="Р&amp;eдактор"
+   					icon="icon/edit.png"
+   				>
+   					<command
+   						commandId="org.eclipse.ui.edit.undo"
+   						label="Откот"
+   					/>
+   					<command
+   						commandId="org.eclipse.ui.edit.redo"
+   						label="Наезд"
+   					/>
+   				</menu>
+        </menuContribution>
    </extension>
    
    <extension point="org.eclipse.ui.views">
-      <view
+		<category id="octavian.category.view" name="Octavian"/>
+		<view
+            name="Файлы"
+            class="org.eclipse.ui.navigator.CommonNavigator"
+            id="octavian.files"
+            icon="icon/project.png"
+            allowMultiple="false"
+            category="octavian.category.view"
+        />
+		<view
             name="Узлы"
-            class="octavian.nodes"
+            class="octavian.Nodes"
             id="octavian.nodes"
             icon="icon/nodes.png"
-            />
+            allowMultiple="false"
+            category="octavian.category.view"
+		/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.navigator.viewer">
+   		<viewer viewerId="octavian.files"/>
+   		<viewerContentBinding viewerId="octavian.files">
+   			<includes>
+   				<contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
+   				<contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+   			</includes>
+   		</viewerContentBinding>
+   		<viewerActionBinding viewerId="octavian.files">
+   			<includes>
+   				<actionExtension pattern="org.eclipse.ui.navigator.resources.*"/>
+   			</includes>
+   		</viewerActionBinding>
+   </extension>
+   
+   <extension point="org.eclipse.ui.navigator.navigatorContent">
+   		<commonFilter id="octavian.filters.nonJava" name="Octavian filter">
+   			<filterExpression>
+   				<not>
+   					<adapt type="org.eclipse.core.resources.IProject">
+   						<test
+   							property="org.eclipse.core.resources.projectNature"
+   							value="org.eclipse.jdt.core.javanature"
+   						/>
+   					</adapt>
+   				</not>
+   			</filterExpression>
+   		</commonFilter>
    </extension>
    
    <extension point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-      		 targetID="*">
+   		<perspectiveExtension targetID="octavian.perspective">
+   			<hiddenMenuItem id="org.eclipse.ui.run"/>
+   			<hiddenMenuItem id="org.eclipse.source.menu"/>
+   			<hiddenMenuItem id="org.eclipse.refactor.menu"/>
+   			<hiddenMenuItem id="org.eclipse.search.menu"/>
          <view
-               standalone="true"
+               standalone="false"
                minimized="false"
+               moveable="false"
+ 				ratio="0.3"
                relative="org.eclipse.ui.editorss"
                relationship="left"
+               id="octavian.files"/>
+         <view
+               standalone="false"
+               minimized="false"
+               moveable="false"
+   				ratio="0.5"
+               relative="octavian.files"
+               relationship="bottom"
                id="octavian.nodes"/>
+   			<view
+               standalone="false"
+   				id="org.eclipse.jdt.ui.PackageExplorer"
+   				minimized="false"
+   				moveable="false"
+   				ratio="0.3"
+   				relationship="bottom"
+   				relative="octavian.nodes"
+   				visible="true"
+   			/>
       </perspectiveExtension>
    </extension>
    
-   <extension point="org.eclipse.ui.menus">
-      <menuContribution
-            locationURI="menu:org.eclipse.ui.main.menu">
-         <menu 
-         	label="Файл" 
-         	icon="icon/file.png">
-            <command
-                  commandId="org.eclipse.ui.file.exit"
-                  label="Выход"
-                  icon="icon/quit.png"/>
-         </menu>
-      </menuContribution>
+   <extension point="org.eclipse.ui.newWizards">
+   		<category id="octavian.category.newwiz" name="Octavian"/>
+   		<primaryWizard id="octavian.wizard.newproject"/>
+   		<wizard
+   			id="octavian.wizard.newproject"
+   			class="octavian.NewProject"
+   			name="Проект Octavian"
+   			category="octavian.category.newwiz"
+   			icon="icon/octave_16x16.png"
+   			hasPages="true"
+   		>
+   			<description>
+Проект для системы облачных вычислений Octavian August
++ поддержка кластера СГАУ "Сергей Королев" [ http://hpc.ssau.ru/ ]
+   			</description>
+   		</wizard>
+   		<wizard
+   			id="octavian.wizard.newm"
+   			class="octavian.NewM"
+   			name="Файл Octave/MatLab (.m)"
+   			category="octavian.category.newwiz"
+   			icon="icon/matlab.png"
+   			hasPages="true"
+   		>
+   			<description>Файл Octave/MatLab (.m)</description>
+   		</wizard>
+   		<wizard
+   			id="octavian.wizard.newoct"
+   			class="octavian.NewOct"
+   			name="Модуль на C++ (.oct)"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/cpp.png"
+   		>
+   			<description>Низкоуровневый модуль расшиения на C++ (.oct)</description>
+   		</wizard>
+   		<wizard
+   			id="octavian.wizard.newlinux"
+   			class="octavian.NewLinux"
+   			name="Программа для Linux (C/C++)"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/linux.png"
+   		>
+   			<description>Программа для UNIX/Linux (C/C++)</description>
+   		</wizard>
+   		<wizard
+   			id="octavian.wizard.newmatrix"
+   			class="octavian.NewMatrix"
+   			name="Матрица (.mat)"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/linux.png"
+   		/>
+   		<wizard
+   			id="octavian.wizard.newfunction"
+   			class="octavian.NewFunction"
+   			name="Функция"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/function.png"
+   		/>
+   		<wizard
+   			id="octavian.wizard.newplot"
+   			class="octavian.NewPlot"
+   			name="График (.plot)"
+   			category="octavian.category.newwiz"
+   			hasPages="true"
+   			icon="icon/plot.png"
+   		/>
    </extension>
+   
+	<extension point="org.eclipse.core.resources.natures"
+         id="octavian.nature">
+      <runtime>
+         <run class="octavian.Nature"/>
+      </runtime>
+   </extension>      
 
+	<extension point="org.eclipse.ui.activities">
+	<activity id="octavian.activity.disabled" name="octavian.activity.disabled">
+		<enabledWhen>
+			<with variable="selection">
+				<count value="-1"/>
+        	</with>
+		</enabledWhen>
+	</activity>
+	<activityPatternBinding
+        activityId="octavian.activity.disabled"
+        pattern="org\.eclipse\.refactor\..*">
+  	</activityPatternBinding>
+	</extension>
+        
 </plugin>
+
